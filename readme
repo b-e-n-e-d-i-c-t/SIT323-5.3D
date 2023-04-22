@@ -1,0 +1,6 @@
+A minimalistic demonstration on two docker containers interacting with each other.
+Run docker-compose up after building the two microservice images.
+Microservice2 will get the api from http://microservice1:3000.
+Microservice1 will receive the get request and respond with "hello world".
+Microservice2 will receive the data and log it on the console.
+Microservice2 will then exit.

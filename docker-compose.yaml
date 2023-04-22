@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  microservice1:
+    container_name: microservice1
+    build:
+      context: ./microserviceOne
+    ports:
+      - "3000:3000"
+  microservice2:
+    container_name: microservice2
+    build:
+      context: ./microserviceTwo
+    environment:
+      - SERVICE_URL=http://microservice1:3000
+    depends_on:
+      - microservice1
